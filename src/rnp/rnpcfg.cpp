@@ -364,7 +364,7 @@ rnp_cfg::~rnp_cfg()
  */
 
 static bool
-grabdate(const char *s, int64_t *t)
+grabdate(const char *s, uint64_t *t)
 {
 #ifndef RNP_USE_STD_REGEX
     static regex_t r;
@@ -416,9 +416,9 @@ get_expiration(const char *s, uint32_t *res)
         return -1;
     }
     uint64_t delta;
-    int64_t  t;
+    uint64_t  t;
     if (grabdate(s, &t)) {
-        time_t now = time(NULL);
+        uint32_t now = time(NULL);
         if (t > now) {
             delta = t - now;
             if (delta > UINT_MAX) {
@@ -460,7 +460,7 @@ get_expiration(const char *s, uint32_t *res)
 int64_t
 get_creation(const char *s)
 {
-    int64_t t;
+    uint64_t t;
 
     if (!s || !strlen(s)) {
         return time(NULL);
