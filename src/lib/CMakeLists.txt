@@ -348,4 +348,6 @@ if (PKG_CONFIG_FOUND)
 endif()
 
 # Build and install man page
-add_adoc_man("${CMAKE_CURRENT_SOURCE_DIR}/librnp.3.adoc")
+if (ENABLE_DOC)
+  add_adoc_man("${CMAKE_CURRENT_SOURCE_DIR}/librnp.3.adoc")
+endif()

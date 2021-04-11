@@ -53,6 +53,7 @@ project(RNP
 option(ENABLE_COVERAGE "Enable code coverage testing.")
 option(ENABLE_SANITIZERS "Enable ASan and other sanitizers.")
 option(ENABLE_FUZZERS "Enable fuzz targets.")
+option(ENABLE_DOC "Enable building documentation." On)
 option(DOWNLOAD_GTEST "Download Googletest" On)
 option(DOWNLOAD_RUBYRNP "Download ruby-rnp and run related tests." On)
 
@@ -137,7 +138,9 @@ if (ENABLE_SANITIZERS)
 endif()
 
 # adoc for man generation
-include(AdocMan)
+if (ENABLE_DOC)
+  include(AdocMan)
+endif()
 
 # everything else is in subdirs
 add_subdirectory(src/examples)
