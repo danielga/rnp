@@ -10,6 +10,7 @@ on:
 env:
   BUILD_MODE: normal
   GPG_VERSION: stable
+  ENABLE_DOC: Off
   CORES: 2
 
 jobs:

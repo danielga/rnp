@@ -115,7 +115,7 @@ jobs:
           yum -y install json-c12-devel git gcc gcc-c++ make autoconf automake libtool bzip2-devel \
             zlib-devel botan2-devel
           # build+install
-          cmake -DBUILD_SHARED_LIBS=$BUILD_SHARED_LIBS -DBUILD_TESTING=no -DCMAKE_INSTALL_PREFIX=/usr .
+          cmake -DBUILD_SHARED_LIBS=$BUILD_SHARED_LIBS -DBUILD_TESTING=no -DENABLE_DOC=Off -DCMAKE_INSTALL_PREFIX=/usr .
           make -j2 install
           # check for install issues
           rnpsrc="$PWD"

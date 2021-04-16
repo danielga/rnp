@@ -51,6 +51,7 @@ jobs:
       - name: Configure
         env:
           VCPKG_DIR: '${{ matrix.vcpkg_dir }}'
+          ENABLE_DOC: Off
         shell: bash
         run: |
           mkdir build
